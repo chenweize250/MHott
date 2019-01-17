@@ -52,7 +52,8 @@ plt.plot(x1, y1, 'b')
 
 
 y2 = [0]*648000
-plt.plot(x1, y2, 'g')
+x0 = x1
+plt.plot(x0, y2, 'g')
 
 "point of intersection"
 plt.plot(1.405, 0, '*r')
@@ -61,9 +62,9 @@ plt.plot(1.405, 0, '*r')
 plt.plot(T1, h1, 'pk')
 
 "plot h vs T"
-h = np.array(range(5000000))
+h = np.array(range(20000000))
 x2 = h/1000
-p12 = [(1/2)]*5000000
+p12 = [(1/2)]*20000000
 
 H3 = h + R
 v1 = (G*M/(H3))
