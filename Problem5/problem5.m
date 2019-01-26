@@ -13,20 +13,25 @@ landsum = cumsum(land);
 industrylandsum = (industrysum + landsum);
 
 %plots
-ax1 = subplot(2,1,1);
-ax2 = subplot(2,1,2);
-
 year = X(:,1);
-plot(ax1, year, industrylandsum)
-title(ax1, 'Cumulative Carbon Emissions vs Year')
-xlabel(ax1, 'Year')
-ylabel(ax1, 'Cumulative Carbon Emissions') %find units
-
 temp = T(1:168, 2);
-plot(ax2, industrylandsum, temp);
-title(ax2, 'Average Global Temperature vs Cumulative Carbon Emissions')
-xlabel(ax2, 'Cumulative Carbon Emissions') %find units
-ylabel(ax2, 'Average Global Temperature') %find units
+
+subplot(2,1,1);
+yyaxis left;
+plot(year, industrylandsum)
+title('Cumulative Emissions and Average Temperature vs Year')
+xlabel('Year')
+ylabel('Cumulative Carbon Emissions') %find units
+yyaxis right;
+plot(year, temp)
+ylabel('Average Global Temperature')
+
+subplot(2,1,2);
+plot(industrylandsum, temp);
+title('Average Global Temperature vs Cumulative Carbon Emissions')
+xlabel('Cumulative Carbon Emissions') %find units
+ylabel('Average Global Temperature') %find units
 %change axis limit
 
 %save data to .mat file
+save('problem5data.mat', 'year', 'temp', 'industrylandsum') %check line

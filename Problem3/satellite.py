@@ -51,9 +51,6 @@ plt.subplot(211)
 plt.plot(x1, y1, 'b')
 
 
-y2 = [0]*648000
-x0 = x1
-plt.plot(x0, y2, 'g')
 
 "point of intersection"
 plt.plot(1.405, 0, '*r')
