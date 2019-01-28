@@ -1,14 +1,13 @@
 %import data
 %{
 absolute path
-xlsfile = '/Users/meganhott/Documents/GitHub/MHott/Problem5/GlobalCarbonBudget2018.xlsx';
-txtfile = '/Users/meganhott/Documents/GitHub/MHott/Problem5/GlobalTempbyYear.txt';
-%}
+%xlsfile = '/Users/meganhott/Documents/GitHub/MHott/Problem5/GlobalCarbonBudget2018.xlsx';
+}
 %relative path
 xlsfile = 'GlobalCarbonBudget2018.xlsx';
 X = xlsread(xlsfile, 'Historical Budget','A116:G283');
 
-txtfile = 'GlobalTempbyYear.txt';
+txtfile = '/Users/meganhott/Documents/GitHub/MHott/Problem5/GlobalTempbyYear.txt';
 T = importdata(txtfile, ' ');
 
 %cumulative sum
@@ -27,18 +26,17 @@ yyaxis left;
 plot(year, totalsum)
 title('Cumulative Emissions and Average Temperature vs Year')
 xlabel('Year')
-ylabel('Cumulative Carbon Emissions (10^1^2 kg)')
+ylabel('Cumulative Carbon Emissions') %find units
 yyaxis right;
 plot(year, temp)
-y = ['Average Global Temperature (',char(176), 'C)'];
-ylabel(y)
+ylabel('Average Global Temperature')
 
 subplot(2,1,2);
 plot(totalsum, temp);
 title('Average Global Temperature vs Cumulative Carbon Emissions')
-xlabel('Cumulative Carbon Emissions (10^1^2 kg)')
-ylabel(y)
+xlabel('Cumulative Carbon Emissions') %find units
+ylabel('Average Global Temperature') %find units
 axis([0, 630, -.6, 1])
 
 %save data to .mat file
-save('problem5datama.mat', 'year', 'temp', 'totalsum')
+save('problem5data.mat', 'year', 'temp', 'totalsum')
