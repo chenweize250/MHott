@@ -9,4 +9,8 @@ Problem 4
 
 Both scripts look good, very efficient use of MATLAB in the script.
 ## 1.28
-It looks like you have yet to push your problem 5 progress. I looked again at problem 3 python script and I'm still getting some odd output :(, Let's look at this tomorrow.
+I looked again at problem 3 python script and I'm still getting some odd output :(, Let's look at this tomorrow.
+
+Problem 5 
+
+Looks great, the graphs appear correct. One little nitpick is the labels on the axes - it's probably good to keep them as short as possible.
