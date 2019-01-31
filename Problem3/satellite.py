@@ -5,11 +5,26 @@ import numpy as np
 import math as mh
 
 T = input('How long in hours does it take the satellite to orbit Earth? ')
-T=float(T)
-T1 = T
 
-"change T to seconds"
-T = T*3600
+T, u = T.split(" ")
+T=float(T)
+
+if u == "hr" or u == "hour":
+    T1 = T
+    T = T*3600
+elif u == "min" or u =="minutes":
+    T1 = T*60
+    T = T*60
+elif u == "sec" or u == "seconds":
+    T1 = T*3600
+    T = T
+else:
+    print("Invalid input")
+
+
+
+
+
 
 "constants"
 G = 6.67*10**(-11)
