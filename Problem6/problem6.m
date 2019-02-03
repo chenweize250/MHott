@@ -1,3 +1,6 @@
+function[range, t] = projectile(v, theta)
+
+
 V = input('What is the initial speed? ', 's');
 V = string(V);
 newV = split(V);
