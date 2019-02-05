@@ -14,3 +14,6 @@ I looked again at problem 3 python script and I'm still getting some odd output 
 Problem 5 
 
 Looks great, the graphs appear correct. One little nitpick is the labels on the axes - it's probably good to keep them as short as possible.
+
+## 2.4
+Problem 6 is another good looking program. A few suggestions in make it even better. Look into using `nargin` to set some default arguments for the later inputs. Also take a look at the function `varargin` this may make variable input length easier to handle.
