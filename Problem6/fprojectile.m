@@ -26,6 +26,7 @@ T = 2*vy/g;
 r = vx*T;
 
 figure
+%change step size of t based on size of imput
 t = 0:0.01:T;
 i = animatedline('Color', 'b', 'Linewidth', 3);
 title("Trajectory")

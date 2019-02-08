@@ -16,11 +16,11 @@ G = 6.67*10^(-11);
 M = 5.98*10^(24);
 R = 6.371*10^(6);
 
-if unit =="hr" | unit =="hours" | unit == "h"
+%if unit =="hr" | unit =="hours" | unit == "h"
 
 switch unit
     case "hr"
-        T = T*3600
+        T = T*3600;
     case "sec"
         %T = T;
     case "min"
