@@ -7,10 +7,29 @@ Created on Tue Feb  5 12:25:06 2019
 """
 
 import numpy as np
+import math as mh
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+#import matplotlib.animation as animation
 
 def projectile(v, theta, u = "m/s", h=0):
+    
+    #if user switches u and h in input this switches them back
+    try:
+        h = int(h)
+    except:
+        units = h
+        h = u
+        u = units
+        
+    #if user switches theta and u this switches them back
+    try:
+        theta = int(theta)
+    except:
+        units = theta
+        theta = u
+        u = units
+        
+    #unit switcher    
     if u =="m/s":
         v = v
         h = h
@@ -21,118 +40,122 @@ def projectile(v, theta, u = "m/s", h=0):
         v = v/3.281
         h = h/3.281
     else:
-        print('Invalid input. Use units of "m/s", "mph", or "ft/s" for speed.')
+        raise Exception('Invalid input. Use units of "m/s", "mph", or "ft/s" for speed.')
    
-    #check if 90 degrees breaks program
+    #checks if inputs are valid
     if theta < 0 or theta > 90:
-        raise Exception('Input an angle between 0 and 90 degrees')
+        raise Exception('Invalid input. Input an angle between 0 and 90 degrees.')
 
-    
-    "add initial height to kinematic equation: use quadratic equation"
+    if v < 0:
+        raise Exception('Invalid input. Input a positive initial speed.')
+        
+    if h < 0:
+        raise Exception('Invalid input. Input a positive initial height') 
+        
+    #calculations
     theta = np.radians(theta)
     vx = v*np.cos(theta)
     vy = v*np.sin(theta)
     g = 9.81
     
-
-#0=h+vyT-.5gT^2
-
+    #range
     roots = np.roots([-.5*g, vy, h])
     T = roots[0]
     r = vx*T  
     
-    #change to account for initial height: calculate in terms of vy=0
-    ymax = vy*(T/2)-.5*g*(T/2)**2 
-    "chage step size of t based on how large input is"
+    #maximum height of projectile
+    ymax = (vy**2+2*g*h)/(2*g)
     t = np.arange(0, T, 0.1)
     
-    ypos = lambda x: vy*x-.5*g*x**2; #might have to change because of h
+    ypos = lambda x: h+vy*x-.5*g*x**2;
     xpos = lambda x: vx*x;
     
+    #plot and change outputs to correct units
     if u == "m/s":
         plt.plot(xpos(t),ypos(t))
+        plt.xlabel("Range (m)")
+        plt.ylabel("Height (m)")
     elif u == "mph" or u == "ft/s":    
         plt.plot(3.281*xpos(t),3.281*ypos(t))
+        plt.xlabel("Range (ft)")
+        plt.ylabel("Height (ft)")
         r = r*3.281
         ymax = ymax*3.281
+    plt.title("Trajectory")
     
-    "animate plot"
-
+    r = round(r, 2)
+    T = round(T, 2)
+    ymax = round(ymax, 2)
     
-    "change outputs to correct units"
-    
-    
-    print(r, T, ymax)
+    #print(r, T, ymax)
     return r, T, ymax
 
 
+def satellite(T, u):
+    if u == "hr" or u == "hour":
+        T1 = T
+        T = T*3600
+    elif u == "min" or u =="minutes":
+        T1 = T/60
+        T = T*60
+    elif u == "sec" or u == "seconds":
+        T1 = T/3600
+        T = T
+    else:
+        print("Invalid input")
 
+    #constants
+    G = 6.67*10**(-11)
+    M = 5.98*10**(24)
+    R = 6.371*10**(6)
 
+    #equations
+    heightm = lambda x: ((G*M*x**2)/(4*mh.pi**2))**(1/3)-R
+    heightkm = lambda x: (((G*M*x**2)/(4*mh.pi**2))**(1/3)-R)/1000
+    velocitykms = lambda x: ((G*M/(x+R))**(1/2))/1000
 
+    #outputs
+    h = heightkm(T)
+    h1 = h
+    v = velocitykms(heightm(T))
+    v1 = v
+    v = round(v)
+    h = round(h)
 
-"""
-ffunction [r,T] = fprojectile(v, theta, vunit)
-%FPROJECTILE takes the initial velocity, launch angle, and units of the
-%initial velocity (either "m/s" or "mph") and returns the range in units of 
-%meters or feet and flight time in units of seconds
-
-switch vunit
-    case "m/s"
-        
-    case "mph"
-        v = v/2.237;
-    otherwise
-        error('Invalid input. Use units of "m/s" or "mph" for speed.')
-end
-
-if theta < 90 & theta > 0
+    #print("The satellite orbits at a height of", h, "km from Earth's surface with a speed of", v, "km/s")
     
-else
-    error("Input an angle between 0 and 90 degrees")
-end
+    #plot h vs T
+    T = np.array(range(0,648000))
+    x1 = lambda x: x/3600
 
-vx = v*cosd(theta);
-vy = v*sind(theta);
-g = 9.81;
+    plt.subplot(211)
+    plt.plot(x1(T), heightkm(T), 'b')
 
-T = 2*vy/g;
-r = vx*T;
+    #point of intersection
+    #plt.plot(1.405, 0, '*r')
 
-figure
-t = 0:0.01:T;
-i = animatedline('Color', 'b', 'Linewidth', 3);
-title("Trajectory")
+    #point of height from input period
+    plt.plot(T1, h1, 'pk')
 
-switch vunit
-    case "m/s"
-        h = @(t) vy.*t-.5.*g.*t.^2;
-        x = @(t) vx.*t;
-        ymax = vy*(T/2)-.5*g*(T/2)^2;
-        
-        axis([0, r, 0, ymax+2])
-        xlabel("Range (m)")
-        ylabel("Height (m)")
-        for k=1:length(t)
-            addpoints(i, x(t(k)), h(t(k)));
-            drawnow
-           
-        end
-    case "mph"
-        r = r*3.281;
-        h = @(t) (vy.*t-.5.*g.*t.^2)*3.281;
-        x = @(t) (vx.*t)*3.281;
-        ymax = (vy*(T/2)-.5*g*(T/2)^2)*3.281;
-        
-        axis([0, r, 0, ymax+2])
-        xlabel("Range (ft)")
-        ylabel("Height (ft)")
-        for k=1:length(t)
-            addpoints(i, x(t(k)), h(t(k)));
-            drawnow
-        end 
-end
+    #plot v vs h
+    h = np.array(range(20000000))
+    x2 = lambda x: x/1000
 
-T=round(T, 2);
-r=round(r, 2);
-end
-"""
+    plt.subplot(212)
+    plt.plot(x2(h), velocitykms(h), 'b')
+    plt.plot(h1, v1, 'pk')
+
+    #plot formatting
+    plt.subplots_adjust(hspace=0.8)
+    plt.subplot(211)
+    plt.title('Height vs Period')
+    plt.xlabel('Period (hours)')
+    plt.ylabel('Height (km)')
+    plt.subplot(212)
+    plt.title('Velocity vs Height')
+    plt.xlabel('Height (km)')
+    plt.ylabel('Velocity (km/s)')
+    plt.show()
+    
+    #print(h, v)
+    return h, v
