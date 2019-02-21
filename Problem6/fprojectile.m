@@ -2,22 +2,7 @@ function [r,T] = fprojectile(v, theta, vunit)
 %FPROJECTILE takes the initial velocity, launch angle, and units of the
 %initial velocity (either "m/s" or "mph") and returns the range in units of 
 %meters or feet and flight time in units of seconds
-%{
-try
-    switch vunit
-        case "m/s"
-        
-        case "mph"
-            v = v/2.237;
-    end
-catch ME
-    if vunit == "ms"
-        vunit = "m/s";
-    else 
-        error('Invalid input. Use units of "m/s" or "mph" for speed.') 
-    end
-end
-%}
+
 try
     switch vunit
         case "m/s"
@@ -25,23 +10,30 @@ try
         case "mph"
             v = v/2.237;
         otherwise
-            error('Invalid input. Use units of "m/s" or "mph" for speed.')
+            error('invalidInput:units','Input units of "m/s" or "mph" for speed')
     end
-catch 
+    
+    assert((theta > 0)&&(theta < 90))
+    assert(v > 0)
+    
+catch ME
     if vunit == "ms"
         vunit = "m/s";
     else
-        error('Invalid input. Use units of "m/s" or "mph" for speed.') 
+        if theta < 0 | theta > 90
+            errortext = 'Input an angle between 0 and 90 degrees';
+            errorid = 'invalidInput:theta';
+        elseif v < 0
+            errortext = 'Input a positive initial speed';
+            errorid = 'invalidInput:velocity';
+        else       
+            errortext = 'Input units of "m/s" or "mph" for speed';   
+            errorid = 'invalidInput:units';
+        end
+        ME = MException(errorid, errortext);
+        throw(ME)
     end
 end  
-
-if theta < 0 | theta > 90
-    error("Invalid input. Input an angle between 0 and 90 degrees.")
-end 
-
-if v < 0
-    error("Invalid input. Input a positive initial speed.")
-end
 
 vx = v*cosd(theta);
 vy = v*sind(theta);

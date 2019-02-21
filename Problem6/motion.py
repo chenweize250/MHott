@@ -15,7 +15,7 @@ def projectile(v, theta, u = "m/s", h=0):
     
     #if user switches u and h in input this switches them back
     try:
-        h = int(h)
+        h = float(h)
     except:
         units = h
         h = u
@@ -23,7 +23,7 @@ def projectile(v, theta, u = "m/s", h=0):
         
     #if user switches theta and u this switches them back
     try:
-        theta = int(theta)
+        theta = float(theta)
     except:
         units = theta
         theta = u
