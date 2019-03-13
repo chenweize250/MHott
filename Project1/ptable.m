@@ -1,10 +1,5 @@
-
-function [a] = ptable(varargin)
-      
-       c = varargin(1)
-       d = varargin(2)
-       e = cell2mat(varargin(1))
-       f = cell2mat(varargin(2))
+function [varargout] = ptable(varargin)
+       
 csvfile = 'periodictabledata.csv';
 table = readtable(csvfile);
 a = length(varargin);
@@ -36,6 +31,7 @@ switch a
         m_aw = @(x) amu2MeV*x;
         
         %plot of calculated masses
+        set(gcf, 'position', [0, 0, 1000, 1000])
         subplot(2,1,1);
         yyaxis left;
         plot(Z, m_sef(A, Z))
@@ -51,56 +47,72 @@ switch a
         title("Binding Energy Per Nucleon (MeV)")
         xlabel("Atomic Number")
         ylabel("Binding Energy")
-        
-
-        
-        
+    
     case 1
-        Z = varargin{1}; %atomic number
+        Z = cell2mat(varargin(1)); %atomic number
         if Z > 112
             error("Input atomic number less than 113")
         else
-           % A = round(table( , 4)
+            mass = m_sef(round(table2array(table(Z, 4))), Z);
+            varargout{1} = mass;
+           
+            struct = table2struct(table(Z,:));
+            varargout{2} = struct;
         end
         
-    case 2
-        try %continues if both are numbers
-            Z = cell2mat(varargin(1));
-            A = cell2mat(varargin(2));
-            assert(double(Z));
-            assert(double(A));
-        catch %if one is character
+    case 2        
+        a = isa(varargin{1}, 'numeric');
+        b = isa(varargin{1}, 'char');
+        c = isa(varargin{1}, 'string');
+        d = isa(varargin{2}, 'numeric');
+        e = isa(varargin{2}, 'char');
+        f = isa(varargin{2}, 'string');
+      
+        if a==1 && d==1
+            if (varargin{1} > varargin{2}) == 1
+                A = varargin{1}; %number of nucleons
+                Z = varargin{2}; %atomic number
+            else %(varargin{1} <= varargin{2}) == 1 
+                Z = varargin{1}; %atomic number
+                A = varargin{2}; %number of nucleons
+            end
             
-        
+            mass = m_sef(A, Z);
+            varargout{1} = mass;
+            
+            %determine if stable using EB: if element is stable the binding
+            %energy is positive
+            s = EB(A, Z)
+            if s>0
+                stability = "stable";
+            else %s<=0
+                stability = "not stable";
+            end
+            varargout{2} = stability;
+            
+        elseif (a==1 && e==1) || (a==1 && f==1) || (b==1 && d==1) || (c==1 && d==1)
+            varargout{1} = "char";
+            if (a==1 && e==1)
+                Z = varargin{1};
+                field = varargin{2};
+            elseif (a==1 && f==1)
+                Z = varargin{1};
+                field = varargin{2};
+            elseif (b==1 && d==1)
+                field = varargin{1};
+                Z = varargin{2};
+            else %(c==1 && d==1)
+                field = varargin{1};
+                Z = varargin{2};
+            end
+            
+            mass = m_sef(round(table2array(table(Z, 4))), Z);
+            varargout{1} = mass;
+            
+            value = table{Z, field};
+            varargout{2} = value;
+        else
+            error("If two arguments are input, at least one must be a number")
         end
-        
-        %if isa(c, 'numeric') && isa(d, 'numeric')
-
-            fprintf("1")
-        %Z = varargin{1}; %atomic number
-        %A = varargin{2}; %number of nucleons
-        
-        %m = m_sef(A, Z)
-        %benergy = EB(A, Z)
-        
-        %if Z > 83 %unstable
-            
-       % else
-            
-                
-            
-        
-        
-        
-        
-        %fprintf("2\n")
-        %tf = isa(
-        %make another switch/if to determine is one of the variables is
-        %char
-        %end
 end
-%a = nargout
-%varargout = a
 end
-
-
