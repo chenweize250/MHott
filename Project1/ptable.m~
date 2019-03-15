@@ -13,7 +13,7 @@ csvfile = 'periodictabledata.csv';
 table = readtable(csvfile);
 a = length(varargin);
 
-%constants (units = MeV)
+%constants (units = MeV
 m_p = 938.272;
 m_n = 939.566;
 a_v = 15.8;
