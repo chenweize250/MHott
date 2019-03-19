@@ -11,7 +11,6 @@ function [varargout] = ptable(varargin)
 
 csvfile = 'periodictabledata.csv';
 table = readtable(csvfile);
-a = length(varargin);
 
 %constants (units = MeV)
 m_p = 938.272;
@@ -31,7 +30,7 @@ delta = @(a, z) ((mod(a, 2)-1)).^2.*(-1).^z;
 EB = @(a, z) a_v.*a-a_s.*a.^(2/3)-a_c.*z.*(z-1)./a.^(1/3)-a_A.*(a-2.*z).^2./a+a_p.*delta(a,z)./a.^(1/2);
 m_sef = @(a, z) z*m_p+(a-z)*m_n-EB(a, z); %c=1
 
-switch a
+switch nargin
     case 0 %no inputs, outputs are graphs
         A = round(table2array(table(:, 4)))';%total number of nucleons
         Z = table2array(table(:, 1))';
@@ -72,7 +71,7 @@ switch a
             varargout{1} = mass;
            
             struct = table2struct(table(Z,:));
-            varargout{2} = struct;
+            varargout{2} = struct;   
         end
         
     case 2        
