@@ -23,3 +23,8 @@ I happy with the matlab version of this projectile motion function. It produces 
 I think that problem 6 is pretty much done, I'd like you to define some MException objects in your program, not just message `errors`. And (nitpicky), but I think that you could those 2 try/except statements in your python program to work as one (this just makes the program simplier in the end).
 ## 3.14
 Okay, bad advice on the try catch. What's up next? Your ptable looks like a good set-up, but it doesn't run quite yet - you need to include some if/else or switch statements that assign variables to `varargin` according to the value of `nargin`
+## 3.29
+Problem 7 is done beautifully, it looks like you understood that. One comment, though, about that last integral, sometimes you're going to hit a singularity in the expression and you're going to have to approach the singularity and maybe take a limit to get an answer to the problem. It will just require some elbow grease if computational methods aren't working - but your insight on what the romberg integrator was doing was good. 
+Problem 8 is not running for me, you missed a vital piece of coding in lines 8, 15, 18
+Problem 9 is almost complete, you just need to solve the drifting problem in the last random number draw from the exponential. What is the range of numbers you are drawing from this distribution? And there is a way that you could cut down you code by 2/3 of the lines, if you're interested in knowing, flag me down next class period. It involves using anonymous functions.
+And you nailed the project 1, I have only one thing that I want you to check on - the binding energy seems off by just a slight bit, recheck that calculation if you have the time.
