@@ -1,0 +1,3 @@
+# Paper
+Great start, I think all that's left to do is clean up your writing a little bit (active vs passive voice), write a conclusion, and make the programs you've written into a more cohesive whole (I mean make sure you're telling a complete story - at the end the climax of the program should be to see how close you are to the actual precession, I know the calculation is there, but you need to highlight it!) Any type of visual that you can create, or at least grab from somewhere, showing the precession of mercury over many years to get that image in people's head would be a plus. 
+I really think this is the most developed paper of the class, so push yourself, it could be a great project! (Way to use the latex editor)
