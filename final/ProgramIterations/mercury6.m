@@ -27,7 +27,8 @@ RP = [Rvenus, Rearth, Rmars, Rjupiter, Rsaturn, Ruranus, Rneptune];
 MP = [mvenus, mearth, mmars, mjupiter, msaturn, muranus, mneptune];
 
 %theta = linspace(0, (2*pi), 100); 
-theta1 = linspace(0, (2*pi)*(365.25*100/87.969),365.25*100/87.969);
+%theta1 = linspace(0, (2*pi)*(365.25*100/87.969),365.25*100/87.969);
+theta1 = linspace(0, (2*pi)*(365.25*100/87.969), 3600*24);
 
 r = @(theta) a.*(1-e.^2)./(1+e.*cos(theta));
 
@@ -43,8 +44,36 @@ end
 deltapsi*(365.25*100/87.969)*360*3600/(2*pi)
 %detlaphi = (1/e)*integral(int, 0, 2*pi)
 
-x = @(r, theta) r.*((2*pi+deltapsi)./(2*pi)).*cos(theta);
-y = @(r, theta) r.*((2*pi+deltapsi)./(2*pi)).*sin(theta);
+%x = @(r, theta) r.*cos(theta)+((2*pi+deltapsi)./(2*pi)).*cos(theta);
+%y = @(r, theta) r.*sin(theta)+((2*pi+deltapsi)./(2*pi)).*sin(theta);
+
+%x = @(r, theta) r.*(2*pi+deltapsi)/(2*pi).*cos(theta);
+%y = @(r, theta) r.*(2*pi+deltapsi)/(2*pi).*sin(theta);
+
+
+%x = @(r, theta) r.*cos(theta)+10000*theta.*deltapsi/(2*pi)
+%y = @(r, theta) r.*sin(theta)+10000*theta.*deltapsi/(2*pi)
+
+%x = @(r, theta) r.*cos(theta)-r.*sin((theta/(2*pi))+5000.*deltapsi);
+%y = @(r, theta) r.*sin(theta)+r.*sin((theta/(2*pi))+5000.*deltapsi);
+
+%circle
+%x = @(r, theta) (e+a.*cos(theta)).*cos(theta.*deltapsi)-(a^2-e^2)^(1/2).*sin(theta).*sin(theta.*deltapsi);
+%y = @(r, theta) (e+a.*cos(theta)).*sin(theta.*deltapsi)+(a^2-e^2)^(1/2).*sin(theta).*cos(theta.*deltapsi);
+
+%small ellipse away from sun
+%x = @(r, theta) r.*(cos(theta.*2.*pi.*deltapsi)-sin(theta).*sin(theta.*2.*pi.*deltapsi));
+%y = @(r, theta) r.*(sin(theta.*2.*pi.*deltapsi)+sin(theta).*cos(theta.*2.*pi.*deltapsi));
+
+%cool spirals
+%x = @(r, theta) r.*cos(theta)-r.*sin(theta).*sin((theta/(2*pi)).*(1/(10000.*deltapsi)));
+%y = @(r, theta) r.*sin(theta)+r.*cos(theta).*sin((theta/(2*pi)).*(1/(10000.*deltapsi)));
+
+%x = @(r, theta) r.*cos(theta)-r.*sin(theta).*sin((theta.*((2*pi).*deltapsi*1000)));
+%y = @(r, theta) r.*sin(theta)+r.*cos(theta).*sin((theta.*((2*pi).*deltapsi*1000)));
+
+x = @(r, theta) r.*cos(theta+10000*theta*deltapsi);
+y = @(r, theta) r.*sin(theta+10000*theta*deltapsi);
 
 plot(0, 0, 'y*')
 hold on

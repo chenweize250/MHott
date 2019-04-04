@@ -1,8 +1,5 @@
-function mercury(varargin)
-%Models the orbit of Mercury. Optional inputs: time in centuries and 
-%amplification of precession. Defaults are 1 century and 10000x
-%amplification. Returns the orbital precession in arcseconds for the
-%specified number of centuries.
+function mercury8(varargin)
+
 a = 57909050000; %semi-major axis (m)
 e = 0.205630; %eccentricity
 msun = 1.9885e30; %sun mass (kg)
@@ -40,7 +37,7 @@ switch nargin
         error('Maximum number of inputs is 2')
 end
 
-theta = linspace(0, (2*pi)*(365.25*100*cent/87.969),24*(2*pi)*(365.25*100*cent/87.969));
+theta = linspace(0, (2*pi)*(365.25*100*cent/87.969), 3600*24*cent);
 
 r = @(theta) a.*(1-e.^2)./(1+e.*cos(theta));
 
@@ -64,8 +61,6 @@ fprintf("Orbital precession due to general relativity: %f arcseconds per orbit; 
 deltapsi = deltapsiP+deltapsiGR;
 fprintf("Total orbital precession per century: %f arcseconds \n\n", deltapsi*(365.25*100/87.969)*360*3600/(2*pi))
 
-fprintf("Orbital precession for %f centuries: %f arcseconds \n\n", cent, cent*deltapsi*(365.25*100/87.969)*360*3600/(2*pi));
-
 x = @(r, theta, deltapsi) r.*cos(theta+amp*theta*deltapsi);
 y = @(r, theta, deltapsi) r.*sin(theta+amp*theta*deltapsi);
 
@@ -86,10 +81,10 @@ hold(tab3ax, 'on')
 tab4ax = axes('parent', tab4);
 hold(tab4ax, 'on')
 
-axis(tab1ax, [-8e10,8e10,-8e10,8e10], 'square')
-axis(tab2ax, [-8e10,8e10,-8e10,8e10], 'square')
-axis(tab3ax, [-8e10,8e10,-8e10,8e10], 'square')
-axis(tab4ax, [-8e10,8e10,-8e10,8e10], 'square')
+axis(tab1ax, [-8e10,8e10,-8e10,8e10])
+axis(tab2ax, [-8e10,8e10,-8e10,8e10])
+axis(tab3ax, [-8e10,8e10,-8e10,8e10])
+axis(tab4ax, [-8e10,8e10,-8e10,8e10])
 
 plot(tab1ax, 0, 0, 'y*')
 plot(tab2ax, 0, 0, 'y*')
@@ -108,9 +103,8 @@ i4 = animatedline(tab2ax, 'Color', 'r', 'marker', '.', 'Linewidth', 1);
 i5 = animatedline(tab3ax, 'Color', 'y', 'marker', '.', 'Linewidth', 1);
 i6 = animatedline(tab4ax, 'Color', 'c', 'marker', '.', 'Linewidth', 1);
 
-lgd = legend(tab1ax, [i1,i2,i3], 'TextColor', 'w');
+legend(tab1ax, [i1,i2,i3], 'TextColor', 'w')
 legend(tab1ax, 'boxoff')
-title(lgd, 'Effect from:')
 
 for k = 1:length(theta)
     %tab 1

@@ -33,19 +33,22 @@ switch dist
 end
 
 % For loop to generate moves
+
 for n = 1:N
     x = pos(x);
     y = pos(y);
     z = pos(z);
     set(h,'xdata',x,'ydata',y,'zdata',z) % sets new positions on plot
     xl = "steps=" + string(n); % displays number of steps on plot
-    xlabel(xl)
-    drawnow nocallbacks
-    % Gathers position information for later plotting
-    r(n,1) = mean(sqrt(x.^2 + y.^2 + z.^2));
-    R(n,1) = max(sqrt(x.^2 + y.^2 + z.^2));        
-end
+         xlabel(xl)
+            drawnow nocallbacks
+            % Gathers position information for later plotting
+            r(n,1) = mean(sqrt(x.^2 + y.^2 + z.^2));
+            R(n,1) = max(sqrt(x.^2 + y.^2 + z.^2));
+            
+        end
   
+
 pause % Stops program until user keystroke
 clf
 % Quick and dirty line fit
