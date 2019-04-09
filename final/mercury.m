@@ -72,10 +72,10 @@ y = @(r, theta, deltapsi) r.*sin(theta+amp*theta*deltapsi);
 f = figure;
 tabgp = uitabgroup(f);
 set(f, 'Position',[0, 0, 1000, 1000])
-tab1 = uitab(tabgp,'Title','All');
-tab2 = uitab(tabgp,'Title','None');
-tab3 = uitab(tabgp,'Title','Planets');
-tab4 = uitab(tabgp,'Title','Planets and GR');
+tab1 = uitab(tabgp,'Title','None');
+tab2 = uitab(tabgp,'Title','Planets');
+tab3 = uitab(tabgp,'Title','Planets & GR');
+tab4 = uitab(tabgp,'Title','All');
 
 tab1ax = axes('parent', tab1);
 hold(tab1ax, 'on')
@@ -101,28 +101,28 @@ set(tab2ax, 'Color', 'k')
 set(tab3ax, 'Color', 'k')
 set(tab4ax, 'Color', 'k')
 
-i1 = animatedline(tab1ax, 'Color', 'r', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'None');
-i2 = animatedline(tab1ax, 'Color', 'y', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'Planets');
-i3 = animatedline(tab1ax, 'Color', 'c', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'Planets & GR');
-i4 = animatedline(tab2ax, 'Color', 'r', 'marker', '.', 'Linewidth', 1);
-i5 = animatedline(tab3ax, 'Color', 'y', 'marker', '.', 'Linewidth', 1);
-i6 = animatedline(tab4ax, 'Color', 'c', 'marker', '.', 'Linewidth', 1);
+i1 = animatedline(tab4ax, 'Color', 'r', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'None');
+i2 = animatedline(tab4ax, 'Color', 'y', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'Planets');
+i3 = animatedline(tab4ax, 'Color', 'c', 'marker', '.', 'Linewidth', 1, 'DisplayName', 'Planets & GR');
+i4 = animatedline(tab1ax, 'Color', 'r', 'marker', '.', 'Linewidth', 1);
+i5 = animatedline(tab2ax, 'Color', 'y', 'marker', '.', 'Linewidth', 1);
+i6 = animatedline(tab3ax, 'Color', 'c', 'marker', '.', 'Linewidth', 1);
 
-lgd = legend(tab1ax, [i1,i2,i3], 'TextColor', 'w');
-legend(tab1ax, 'boxoff')
+lgd = legend(tab4ax, [i1,i2,i3], 'TextColor', 'w');
+legend(tab4ax, 'boxoff')
 title(lgd, 'Effect from:')
 
 for k = 1:length(theta)
     %tab 1
+    addpoints(i4, x(r(theta(k)), theta(k), 0), y(r(theta(k)), theta(k), 0));
+    %tab 2
+    addpoints(i5, x(r(theta(k)), theta(k), deltapsiP), y(r(theta(k)), theta(k), deltapsiP));
+    %tab 3
+    addpoints(i6, x(r(theta(k)), theta(k), deltapsi), y(r(theta(k)), theta(k), deltapsi));
+    %tab 4
     addpoints(i1, x(r(theta(k)), theta(k), 0), y(r(theta(k)), theta(k), 0));
     addpoints(i2, x(r(theta(k)), theta(k), deltapsiP), y(r(theta(k)), theta(k), deltapsiP));
     addpoints(i3, x(r(theta(k)), theta(k), deltapsi), y(r(theta(k)), theta(k), deltapsi));
-    %tab 2
-    addpoints(i4, x(r(theta(k)), theta(k), 0), y(r(theta(k)), theta(k), 0));
-    %tab 3
-    addpoints(i5, x(r(theta(k)), theta(k), deltapsiP), y(r(theta(k)), theta(k), deltapsiP));
-    %tab 4
-    addpoints(i6, x(r(theta(k)), theta(k), deltapsi), y(r(theta(k)), theta(k), deltapsi));
     drawnow
 end
 end
