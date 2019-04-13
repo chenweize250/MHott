@@ -1,0 +1,1411 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     57736,       1403]
+NotebookOptionsPosition[     54011,       1331]
+NotebookOutlinePosition[     54364,       1347]
+CellTagsIndexPosition[     54321,       1344]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AC Circuits", "Title",
+ CellChangeTimes->{{3.764027264574608*^9, 3.764027308626555*^9}, 
+   3.764027444590211*^9, {3.7640278833943577`*^9, 3.7640279856170464`*^9}, {
+   3.7640280458858147`*^9, 3.764028475757634*^9}, {3.764028538941729*^9, 
+   3.7640285392836246`*^9}, {3.764028587956896*^9, 3.764028604851115*^9}, {
+   3.764028635084052*^9, 3.764028735009901*^9}, {3.764028934448555*^9, 
+   3.764029018149486*^9}, {3.764029178580708*^9, 3.764029204728203*^9}, {
+   3.764029290190134*^9, 3.764029357594922*^9}, {3.7640294042852*^9, 
+   3.764029409803616*^9}, {3.764029772453372*^9, 3.764029820923946*^9}, {
+   3.764029857831962*^9, 3.7640298859053707`*^9}, {3.764029958781475*^9, 
+   3.764029969927425*^9}, 3.764034293771*^9, {3.764035203753796*^9, 
+   3.764035212861594*^9}},ExpressionUUID->"f9506561-d8f6-46a9-8bb1-\
+e0bb178d81c1"],
+
+Cell["\[MathematicaIcon]Study-guide for AC Circuits (Physics 2)\
+\[MathematicaIcon]", "Text",
+ CellChangeTimes->{{3.764181895952135*^9, 3.764181951850409*^9}, {
+  3.7641820091979017`*^9, 
+  3.764182015970694*^9}},ExpressionUUID->"8c4a3d9e-239f-4c55-a190-\
+719b54bd46fa"],
+
+Cell[CellGroupData[{
+
+Cell["Resistor Circuits", "Subsubsection",
+ CellChangeTimes->{{3.7640347160643787`*^9, 3.764034735084272*^9}, {
+  3.7640350278549347`*^9, 3.764035028746059*^9}, {3.7640351915902863`*^9, 
+  3.764035245606676*^9}},ExpressionUUID->"ac79fd8f-8fcc-4674-95e3-\
+75d042e9bc0f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"V", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   SubscriptBox["V", "peak"], "cos", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["I", "peak"], "cos", 
+    RowBox[{"(", "\[Omega]t", ")"}]}], "=", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["V", "peak"], "R"], "cos", 
+    RowBox[{"(", "\[Omega]t", ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["V", "rms"], "=", 
+  FractionBox[
+   SubscriptBox["V", "peak"], 
+   SqrtBox["2"]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["I", "rms"], "=", 
+  FractionBox[
+   SubscriptBox["I", "peak"], 
+   SqrtBox["2"]]}]}], "DisplayFormula",
+ CellChangeTimes->{{3.764180712850465*^9, 
+  3.7641808267009773`*^9}},ExpressionUUID->"822f3df7-c9d4-4d77-a973-\
+4fe8c3c21eee"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vr", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Vpeak", "*", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ir", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_", ",", " ", "R_"}], "]"}], 
+   " ", ":=", " ", 
+   RowBox[{
+    FractionBox["Vpeak", "R"], 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764034295256151*^9, 3.764034295281177*^9}, {
+   3.764034739505589*^9, 3.764034740501405*^9}, {3.7640348566694*^9, 
+   3.764034857543663*^9}, {3.7640349045503473`*^9, 3.764035024320243*^9}, 
+   3.764035171643887*^9, 3.764035276190681*^9, {3.764035327270631*^9, 
+   3.764035365286832*^9}, {3.764035401501861*^9, 3.7640354208729677`*^9}, {
+   3.764035458835026*^9, 3.764035534458671*^9}, {3.764035803693315*^9, 
+   3.7640358362256403`*^9}, {3.764036366588183*^9, 3.764036414673686*^9}, {
+   3.764036535096672*^9, 3.764036562337*^9}, {3.764037273715831*^9, 
+   3.764037299312664*^9}, {3.764037347020955*^9, 3.764037362245055*^9}, {
+   3.764084040096773*^9, 3.764084062477627*^9}, {3.764180831299814*^9, 
+   3.764180835369225*^9}},ExpressionUUID->"4340f15e-1d92-494b-bc13-\
+17b2c455f404"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Vr", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", "\[Omega]"}], "]"}], ",", " ", 
+       RowBox[{"Ir", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", "\[Omega]", ",", "R"}], "]"}]}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "240"}], "*", 
+         SqrtBox["2"]}], ",", 
+        RowBox[{"240", "*", 
+         SqrtBox["2"]}]}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"LineLegend", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Voltage\>\"", ",", "\"\<Current\>\""}], "}"}], "]"}]}]}],
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vpeak", ",", 
+       RowBox[{"120", "*", 
+        SqrtBox["2"]}], ",", "\"\<peak voltage\>\""}], "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", 
+      SqrtBox["2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]", ",", " ", 
+       RowBox[{"120", "*", "\[Pi]"}], ",", " ", "\"\<angular frequency\>\""}],
+       "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"R", ",", "5", ",", "\"\<resistance\>\""}], "}"}], ",", "0.01", 
+     ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+     "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQHXdzFUcg9xvHdf2rwfRuKQPOECDN1WDGC6LbuG8J
+guiymTMlQPSENxMUQHRk1X4wXfQvURtEL2kQ0wPRlr1Tg0H0MvbH0SBaRf5y
+FYi+p/2rGkTv5X4wMxtIlzTwzwXRsVsnLQXR8yMrloHoKarb14PoaV6vt4Ho
+poZvB0F0zv1Th0G0wvT+CyB6j5rpfRD9gNnjOYhepsb7E0R/tLryB0QX9Apx
+5gDpEz2zeUH0L9lJYiC6akmnPIh241mnDqIjN1mHgWgDNu0oEJ2dcr8TRP9u
+fgOmfX4fXAGi3708B6YBFTaJKQ==
+  "],
+ CellLabel->"In[27]:=",ExpressionUUID->"b5fbe725-02d0-4853-ae4b-b8eb8ea84458"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`R$$ = 1.97, $CellContext`Vpeak$$ = 
+    283.06898664459874`, $CellContext`xf$$ = 0.07, $CellContext`\[Omega]$$ = 
+    271.4336052701581, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vpeak$$], 120 2^Rational[1, 2], "peak voltage"}, 0, 
+      240 2^Rational[1, 2]}, {{
+       Hold[$CellContext`\[Omega]$$], 120 Pi, "angular frequency"}, 0, 240 
+      Pi}, {{
+       Hold[$CellContext`R$$], 5, "resistance"}, 0.01, 10}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}}, Typeset`size$$ = {
+    450., {103., 107.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Vpeak$122036$$ = 
+    0, $CellContext`\[Omega]$122037$$ = 0, $CellContext`R$122038$$ = 
+    0, $CellContext`xf$122039$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`R$$ = 5, $CellContext`Vpeak$$ = 
+        120 2^Rational[1, 2], $CellContext`xf$$ = 
+        0.1, $CellContext`\[Omega]$$ = 120 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`Vpeak$$, $CellContext`Vpeak$122036$$, 0], 
+        Hold[$CellContext`\[Omega]$$, $CellContext`\[Omega]$122037$$, 0], 
+        Hold[$CellContext`R$$, $CellContext`R$122038$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$122039$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         $CellContext`Vr[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$], 
+         $CellContext`Ir[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$, $CellContext`R$$]}, {$CellContext`x, 0, $CellContext`xf$$}, 
+        PlotRange -> {(-240) Sqrt[2], 240 Sqrt[2]}, PlotLegends -> 
+        LineLegend[{"Voltage", "Current"}]], 
+      "Specifications" :> {{{$CellContext`Vpeak$$, 120 2^Rational[1, 2], 
+          "peak voltage"}, 0, 240 
+         2^Rational[1, 2]}, {{$CellContext`\[Omega]$$, 120 Pi, 
+          "angular frequency"}, 0, 240 
+         Pi}, {{$CellContext`R$$, 5, "resistance"}, 0.01, 
+         10}, {{$CellContext`xf$$, 0.1, "time"}, 0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{495., {190., 196.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.764084799238823*^9, 3.764084809603808*^9}, {
+   3.764084847411798*^9, 3.764084870371839*^9}, {3.7640849023737783`*^9, 
+   3.764084917681993*^9}, 3.7640850554180593`*^9, 3.764085461750803*^9, 
+   3.764085840365973*^9, {3.764086088281364*^9, 3.764086109439217*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"b8a406da-94a8-4f5e-b671-44c2d7aa63ef"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inductor Circuits", "Subsubsection",
+ CellChangeTimes->{
+  3.764029500950876*^9, {3.76403606664611*^9, 3.764036075766951*^9}},
+ NumberMarks->False,ExpressionUUID->"bb08b43b-8abf-4e4a-a0d5-094852a5acbf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"V", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   SubscriptBox["V", "peak"], "cos", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["I", "peak"], "sin", 
+    RowBox[{"(", "\[Omega]t", ")"}]}], "=", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["V", "peak"], "\[Omega]L"], "sin", 
+    RowBox[{"(", "\[Omega]t", ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["X", "L"], "=", "\[Omega]L"}]}], "DisplayFormula",
+ CellChangeTimes->{{3.76418049152627*^9, 
+  3.764180682095654*^9}},ExpressionUUID->"e08a4279-33a8-462c-ac88-\
+717fbe22659a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vi", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Vpeak", "*", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ii", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_", ",", "L_"}], "]"}], " ", ":=",
+    " ", 
+   RowBox[{
+    FractionBox["Vpeak", 
+     RowBox[{"\[Omega]", "*", "L"}]], "*", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"XL", "[", 
+    RowBox[{"\[Omega]_", ",", "L_"}], "]"}], " ", ":=", 
+   RowBox[{"\[Omega]", "*", "L"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7640295081299562`*^9, 3.764029508154471*^9}, 
+   3.7640361041335583`*^9, {3.7640361924781218`*^9, 3.764036228027956*^9}, {
+   3.76403660676865*^9, 3.76403660988027*^9}, {3.764036753554006*^9, 
+   3.7640367568310537`*^9}, {3.764037025906562*^9, 3.764037033745495*^9}, {
+   3.7640371742408953`*^9, 3.764037180752887*^9}, {3.764037392522053*^9, 
+   3.76403741521185*^9}, {3.7640378400759974`*^9, 3.764037969009839*^9}, {
+   3.76408555626121*^9, 3.764085563720845*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"59a6516f-65f1-4253-bb29-89d24e9d69a6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Vi", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", " ", "\[Omega]"}], "]"}], ",", " ", 
+       RowBox[{"Ii", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", "\[Omega]", ",", "L"}], "]"}]}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "240"}], "*", 
+         SqrtBox["2"]}], ",", 
+        RowBox[{"240", "*", 
+         SqrtBox["2"]}]}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"LineLegend", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Voltage\>\"", ",", "\"\<Current\>\""}], "}"}], "]"}]}]}],
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vpeak", ",", 
+       RowBox[{"120", "*", 
+        SqrtBox["2"]}], ",", "\"\<peak voltage\>\""}], "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", 
+      SqrtBox["2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]", ",", " ", 
+       RowBox[{"120", "*", "\[Pi]"}], ",", " ", "\"\<angular frequency\>\""}],
+       "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"L", ",", "0.003", ",", "\"\<inductance\>\""}], "}"}], ",", 
+     "0.0001", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+     "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.764028618918192*^9, 3.764028618938044*^9}, 
+   3.764036517525861*^9, {3.7640366132752533`*^9, 3.76403673196353*^9}, {
+   3.764036789915642*^9, 3.764036805193631*^9}, {3.76403691179161*^9, 
+   3.764036912228094*^9}, {3.764085506871068*^9, 3.764085621928278*^9}, {
+   3.7640856642909317`*^9, 3.7640857672148247`*^9}, {3.764085814037223*^9, 
+   3.764085881827224*^9}, {3.7640859789044647`*^9, 3.764086055164094*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"e4562902-2152-42b2-b14b-cca0bc64c838"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`L$$ = 0.0666, $CellContext`Vpeak$$ = 
+    188.03383525312674`, $CellContext`xf$$ = 0.1, $CellContext`\[Omega]$$ = 
+    233.73449342708062`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vpeak$$], 120 2^Rational[1, 2], "peak voltage"}, 0, 
+      240 2^Rational[1, 2]}, {{
+       Hold[$CellContext`\[Omega]$$], 120 Pi, "angular frequency"}, 0, 240 
+      Pi}, {{
+       Hold[$CellContext`L$$], 0.003, "inductance"}, 0.0001, 0.1}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}}, Typeset`size$$ = {
+    450., {103., 107.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Vpeak$116058$$ = 
+    0, $CellContext`\[Omega]$116059$$ = 0, $CellContext`L$116060$$ = 
+    0, $CellContext`xf$116061$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`L$$ = 0.003, $CellContext`Vpeak$$ = 
+        120 2^Rational[1, 2], $CellContext`xf$$ = 
+        0.1, $CellContext`\[Omega]$$ = 120 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`Vpeak$$, $CellContext`Vpeak$116058$$, 0], 
+        Hold[$CellContext`\[Omega]$$, $CellContext`\[Omega]$116059$$, 0], 
+        Hold[$CellContext`L$$, $CellContext`L$116060$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$116061$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         $CellContext`Vi[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$], 
+         $CellContext`Ii[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$, $CellContext`L$$]}, {$CellContext`x, 0, $CellContext`xf$$}, 
+        PlotRange -> {(-240) Sqrt[2], 240 Sqrt[2]}, PlotLegends -> 
+        LineLegend[{"Voltage", "Current"}]], 
+      "Specifications" :> {{{$CellContext`Vpeak$$, 120 2^Rational[1, 2], 
+          "peak voltage"}, 0, 240 
+         2^Rational[1, 2]}, {{$CellContext`\[Omega]$$, 120 Pi, 
+          "angular frequency"}, 0, 240 
+         Pi}, {{$CellContext`L$$, 0.003, "inductance"}, 0.0001, 
+         0.1}, {{$CellContext`xf$$, 0.1, "time"}, 0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{495., {190., 196.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7640366741632767`*^9, 3.7640366880700808`*^9}, {
+   3.7640367228461246`*^9, 3.7640367616251383`*^9}, {3.764036793500134*^9, 
+   3.764036805984611*^9}, 3.764036913316883*^9, 3.7640857745520353`*^9, {
+   3.7640858153766747`*^9, 3.764085830592258*^9}, {3.764085862800295*^9, 
+   3.764085883492989*^9}, {3.7640860166315002`*^9, 3.76408605689184*^9}, {
+   3.7640922963831263`*^9, 3.764092309061224*^9}, {3.764092345140818*^9, 
+   3.7640923633685713`*^9}, {3.764092426962206*^9, 3.764092430720131*^9}},
+ CellLabel->"Out[26]=",ExpressionUUID->"8484c2d9-4154-4bec-9a2f-f7defa32f82a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Capacitor Circuits", "Subsubsection",
+ CellChangeTimes->{{3.764037750561552*^9, 
+  3.764037770643187*^9}},ExpressionUUID->"07ae95e6-4821-4f8d-a897-\
+683b03863e2e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"V", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   SubscriptBox["V", "peak"], "cos", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     SubscriptBox["I", "peak"]}], "sin", 
+    RowBox[{"(", "\[Omega]t", ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     SubscriptBox["\[Omega]CV", "peak"]}], "sin", 
+    RowBox[{"(", "\[Omega]t", ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   SubscriptBox["CV", "peak"], "cos", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["X", "C"], "=", 
+  FractionBox["1", "\[Omega]C"]}]}], "DisplayFormula",
+ CellChangeTimes->{{3.7641801540046883`*^9, 3.764180304089994*^9}, {
+  3.76418033741477*^9, 
+  3.76418043374712*^9}},ExpressionUUID->"ff003be8-600a-4492-8dbf-\
+24d4d9a46204"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vc", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Vpeak", "*", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ic", "[", 
+    RowBox[{"t_", ",", "Vpeak_", ",", "\[Omega]_", ",", " ", "C_"}], "]"}], 
+   " ", ":=", " ", 
+   RowBox[{"Vpeak", "*", "\[Omega]", "*", "C", "*", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764037808933428*^9, 3.764037810270857*^9}, {
+  3.76403800339023*^9, 3.7640380361731243`*^9}, {3.764038155192474*^9, 
+  3.7640382049253073`*^9}, {3.764087019075935*^9, 3.764087067617003*^9}, {
+  3.764180445329015*^9, 
+  3.7641804458228283`*^9}},ExpressionUUID->"302be4fd-a159-4cf8-bdbb-\
+18e7e6aadb2b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Vc", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", "\[Omega]"}], "]"}], ",", " ", 
+       RowBox[{"Ic", "[", 
+        RowBox[{"x", ",", "Vpeak", ",", "\[Omega]", ",", "C"}], "]"}]}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "240"}], "*", 
+         SqrtBox["2"]}], ",", 
+        RowBox[{"240", "*", 
+         SqrtBox["2"]}]}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"LineLegend", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Voltage\>\"", ",", "\"\<Current\>\""}], "}"}], "]"}]}]}],
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vpeak", ",", 
+       RowBox[{"120", "*", 
+        SqrtBox["2"]}], ",", "\"\<peak voltage\>\""}], "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", 
+      SqrtBox["2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]", ",", " ", 
+       RowBox[{"120", "*", "\[Pi]"}], ",", " ", "\"\<angular frequency\>\""}],
+       "}"}], ",", "0", ",", 
+     RowBox[{"240", "*", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"C", ",", "0.004", ",", "\"\<capacitance\>\""}], "}"}], ",", 
+     "0", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+     "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.764038118215797*^9, 3.764038128348281*^9}, {
+  3.7640382086589527`*^9, 3.764038304510234*^9}, {3.764086185459861*^9, 
+  3.7640862264396763`*^9}, {3.764086259368289*^9, 3.7640864553843*^9}, {
+  3.764086540333067*^9, 3.764086541676161*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"784bbf32-2c37-4af1-9479-0b51227bfa5c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{C$$ = 0.00372, $CellContext`Vpeak$$ = 120 
+    2^Rational[1, 2], $CellContext`xf$$ = 0.1, $CellContext`\[Omega]$$ = 
+    218.31023511670026`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vpeak$$], 120 2^Rational[1, 2], "peak voltage"}, 0, 
+      240 2^Rational[1, 2]}, {{
+       Hold[$CellContext`\[Omega]$$], 120 Pi, "angular frequency"}, 0, 240 
+      Pi}, {{
+       Hold[C$$], 0.004, "capacitance"}, 0, 0.01}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}}, Typeset`size$$ = {
+    450., {103., 107.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Vpeak$154680$$ = 
+    0, $CellContext`\[Omega]$154681$$ = 0, C$154682$$ = 
+    0, $CellContext`xf$154683$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       C$$ = 0.004, $CellContext`Vpeak$$ = 
+        120 2^Rational[1, 2], $CellContext`xf$$ = 
+        0.1, $CellContext`\[Omega]$$ = 120 Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`Vpeak$$, $CellContext`Vpeak$154680$$, 0], 
+        Hold[$CellContext`\[Omega]$$, $CellContext`\[Omega]$154681$$, 0], 
+        Hold[C$$, C$154682$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$154683$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         $CellContext`Vc[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$], 
+         $CellContext`Ic[$CellContext`x, $CellContext`Vpeak$$, $CellContext`\
+\[Omega]$$, C$$]}, {$CellContext`x, 0, $CellContext`xf$$}, 
+        PlotRange -> {(-240) Sqrt[2], 240 Sqrt[2]}, PlotLegends -> 
+        LineLegend[{"Voltage", "Current"}]], 
+      "Specifications" :> {{{$CellContext`Vpeak$$, 120 2^Rational[1, 2], 
+          "peak voltage"}, 0, 240 
+         2^Rational[1, 2]}, {{$CellContext`\[Omega]$$, 120 Pi, 
+          "angular frequency"}, 0, 240 Pi}, {{C$$, 0.004, "capacitance"}, 0, 
+         0.01}, {{$CellContext`xf$$, 0.1, "time"}, 0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{495., {190., 196.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.764086386554809*^9, 3.764086409797165*^9}, 
+   3.764086458592942*^9, {3.764086516374996*^9, 3.764086542556816*^9}, 
+   3.7640865741335897`*^9, 3.7640866196325817`*^9, {3.7640922303024*^9, 
+   3.76409223485363*^9}, {3.7640924380216513`*^9, 3.764092439416389*^9}},
+ CellLabel->"Out[36]=",ExpressionUUID->"a95c9a66-5a0a-43de-8382-86f0845813c2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Transformers", "Subsubsection",
+ CellChangeTimes->{{3.7640871804207077`*^9, 
+  3.764087192725539*^9}},ExpressionUUID->"bf655b09-06fc-448b-8d07-\
+12303df8fe15"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"V2", "[", 
+    RowBox[{"V1_", ",", "N1_", ",", "N2_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{"V1", "*", "N2"}], "N1"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"I2", "[", 
+    RowBox[{"I1_", ",", "N1_", ",", "N2_"}], "]"}], " ", ":=", " ", 
+   FractionBox[
+    RowBox[{"I1", "*", "N1"}], "N2"]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764087204434929*^9, 
+  3.764087398105509*^9}},ExpressionUUID->"932138ad-0ca5-407a-b235-\
+96aa96398dc9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["LC Circuits", "Subsubsection",
+ CellChangeTimes->{{3.764087426729034*^9, 
+  3.76408742884489*^9}},ExpressionUUID->"8a5cd586-9c5f-41d3-8e23-\
+a14fa559da85"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Q", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   FormBox[
+    SubscriptBox["Q", "peak"],
+    TraditionalForm], "cos", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"I", 
+   RowBox[{"(", "t", ")"}]}], "=", 
+  RowBox[{
+   FormBox[
+    RowBox[{"-", 
+     SubscriptBox["\[Omega]Q", "peak"]}],
+    TraditionalForm], "sin", 
+   RowBox[{"(", "\[Omega]t", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Omega]", "=", 
+  FractionBox["1", 
+   SqrtBox["LC"]]}]}], "DisplayFormula",
+ CellChangeTimes->{{3.764179666481327*^9, 3.764179669339117*^9}, {
+  3.764179713086844*^9, 3.7641798986790237`*^9}, {3.764179938262248*^9, 
+  3.764180084931242*^9}},ExpressionUUID->"7b8169ea-6f73-4139-a1ad-\
+2c05c14cf22e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Qlc", "[", 
+    RowBox[{"t_", ",", "Qpeak_", ",", "\[Omega]_"}], "]"}], " ", ":=", 
+   RowBox[{"Qpeak", "*", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ilc", "[", 
+    RowBox[{"t_", ",", "Qpeak_", ",", "\[Omega]_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"-", "\[Omega]"}], "*", "Qpeak", "*", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"\[Omega]", "*", "t"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Omega]", "[", 
+    RowBox[{"L_", ",", "C_"}], "]"}], ":=", 
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{"L", "*", "C"}]]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Qlc", "[", 
+        RowBox[{"x", ",", "Qpeak", ",", 
+         RowBox[{"\[Omega]", "[", 
+          RowBox[{"L", ",", "C"}], "]"}]}], "]"}], ",", 
+       RowBox[{"Ilc", "[", 
+        RowBox[{"x", ",", "Qpeak", ",", 
+         RowBox[{"\[Omega]", "[", 
+          RowBox[{"L", ",", "C"}], "]"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "y"}], ",", "y"}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"LineLegend", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Charge\>\"", ",", "\"\<Current\>\""}], "}"}], "]"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Qpeak", ",", "0.005", ",", "\"\<peak charge\>\""}], "}"}], ",",
+      "0", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"L", ",", "0.03", ",", "\"\<inductance\>\""}], "}"}], ",", 
+     "0.0001", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"C", ",", "0.0004", ",", "\"\<capacitance\>\""}], "}"}], ",", 
+     "0", ",", "0.001"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "2", ",", "\"\<y-axis\>\""}], "}"}], ",", "0.01", ",",
+      "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.764087468362924*^9, 3.764087487919117*^9}, {
+  3.7640875222504787`*^9, 3.764087825617075*^9}, {3.7640878568559227`*^9, 
+  3.7640878974175177`*^9}, {3.764088063482745*^9, 3.7640881731455593`*^9}, {
+  3.764088210221092*^9, 3.764088215651228*^9}, {3.764088249602124*^9, 
+  3.764088292539175*^9}, {3.764088390717465*^9, 3.76408840952919*^9}, {
+  3.764088469824231*^9, 3.764088608735907*^9}, {3.764088658563754*^9, 
+  3.76408869606586*^9}, {3.764179330310453*^9, 3.764179330578567*^9}, {
+  3.7641796525977716`*^9, 3.7641796571782303`*^9}, {3.764181506372813*^9, 
+  3.764181554291011*^9}},
+ CellLabel->
+  "In[145]:=",ExpressionUUID->"5c6b9b90-74b9-4aa2-9a35-566d8eec3f22"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{C$$ = 0.0004, $CellContext`L$$ = 
+    0.03, $CellContext`Qpeak$$ = 0.005, $CellContext`xf$$ = 
+    0.1, $CellContext`y$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Qpeak$$], 0.005, "peak charge"}, 0, 0.01}, {{
+       Hold[$CellContext`L$$], 0.03, "inductance"}, 0.0001, 0.1}, {{
+       Hold[C$$], 0.0004, "capacitance"}, 0, 0.001}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}, {{
+       Hold[$CellContext`y$$], 2, "y-axis"}, 0.01, 10}}, Typeset`size$$ = {
+    449., {112., 117.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Qpeak$66427$$ = 
+    0, $CellContext`L$66428$$ = 0, C$66429$$ = 0, $CellContext`xf$66430$$ = 
+    0, $CellContext`y$66431$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       C$$ = 0.0004, $CellContext`L$$ = 0.03, $CellContext`Qpeak$$ = 
+        0.005, $CellContext`xf$$ = 0.1, $CellContext`y$$ = 2}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`Qpeak$$, $CellContext`Qpeak$66427$$, 0], 
+        Hold[$CellContext`L$$, $CellContext`L$66428$$, 0], 
+        Hold[C$$, C$66429$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$66430$$, 0], 
+        Hold[$CellContext`y$$, $CellContext`y$66431$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         $CellContext`Qlc[$CellContext`x, $CellContext`Qpeak$$, 
+          $CellContext`\[Omega][$CellContext`L$$, C$$]], 
+         $CellContext`Ilc[$CellContext`x, $CellContext`Qpeak$$, 
+          $CellContext`\[Omega][$CellContext`L$$, C$$]]}, {$CellContext`x, 
+         0, $CellContext`xf$$}, 
+        PlotRange -> {-$CellContext`y$$, $CellContext`y$$}, PlotLegends -> 
+        LineLegend[{"Charge", "Current"}]], 
+      "Specifications" :> {{{$CellContext`Qpeak$$, 0.005, "peak charge"}, 0, 
+         0.01}, {{$CellContext`L$$, 0.03, "inductance"}, 0.0001, 0.1}, {{
+         C$$, 0.0004, "capacitance"}, 0, 
+         0.001}, {{$CellContext`xf$$, 0.1, "time"}, 0, 
+         1}, {{$CellContext`y$$, 2, "y-axis"}, 0.01, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{494., {213., 219.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.764088176922429*^9, 3.764088216971808*^9, {3.7640882549729843`*^9, 
+   3.764088292983252*^9}, 3.764088393332468*^9, 3.764088474733322*^9, {
+   3.7640885389964657`*^9, 3.764088609483984*^9}, {3.764088659659281*^9, 
+   3.7640886965277987`*^9}, 3.7640922116264267`*^9, {3.7640924538964643`*^9, 
+   3.764092458369844*^9}, 3.764175853595199*^9, 3.7641761813339252`*^9, 
+   3.764179331304118*^9, 3.764179654147709*^9, 3.7641815586000137`*^9},
+ CellLabel->
+  "Out[148]=",ExpressionUUID->"8e2b266e-b07d-4173-95e9-57fa9cf8dbac"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["RLC Circuits", "Subsubsection",
+ CellChangeTimes->{{3.764088744781014*^9, 
+  3.764088747905899*^9}},ExpressionUUID->"34771a02-e29f-4554-8866-\
+ba5362cb2643"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"L", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["d", "2"], "Q"}], 
+      SuperscriptBox["dt", "2"]]}], "+", 
+    RowBox[{"R", 
+     FractionBox["dQ", "dt"]}], "+", 
+    FractionBox["Q", "C"]}], "=", "0"}], 
+  "DisplayFormula"], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "Damped", " ", "oscillations", " ", "with", " ", "natural", " ", 
+   "frequency", " ", "of", " ", 
+   StyleBox["\[Omega]", "DisplayFormula"]}], 
+  StyleBox["=", "DisplayFormula"], 
+  StyleBox[
+   FractionBox["1", 
+    SqrtBox["LC"]], "DisplayFormula"]}]}], "Text",
+ CellChangeTimes->{{3.764179388253248*^9, 3.764179407588779*^9}, {
+  3.7641794496956797`*^9, 3.764179470505158*^9}, {3.764179512392495*^9, 
+  3.764179636202816*^9}},ExpressionUUID->"364d9a1d-172b-4f4b-910c-\
+e537efad89e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Qrlc", "=", 
+        RowBox[{"NDSolve", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"L", "*", 
+               RowBox[{
+                RowBox[{"y", "''"}], "[", "x", "]"}]}], "+", 
+              RowBox[{"R", "*", 
+               RowBox[{
+                RowBox[{"y", "'"}], "[", "x", "]"}]}], "+", 
+              FractionBox[
+               RowBox[{"y", "[", "x", "]"}], "C"]}], "==", "0"}], ",", 
+            RowBox[{
+             RowBox[{"y", "[", "0", "]"}], "==", "Qpeak"}], ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"y", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+          "y", ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "0", ",", "xf"}], "}"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"y", "[", "x", "]"}], ",", 
+            RowBox[{
+             RowBox[{"y", "'"}], "[", "x", "]"}]}], "}"}], "/.", "Qrlc"}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "g"}], ",", "g"}], "}"}]}], ",", 
+        RowBox[{"PlotLegends", "\[Rule]", 
+         RowBox[{"LineLegend", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Charge\>\"", ",", "\"\<Current\>\""}], "}"}], 
+          "]"}]}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"R", ",", "5", ",", "\"\<resistance\>\""}], "}"}], ",", "0.01",
+       ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"L", ",", "0.03", ",", "\"\<inductance\>\""}], "}"}], ",", 
+      "0.0001", ",", "0.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"C", ",", "0.0004", ",", "\"\<capacitance\>\""}], "}"}], ",", 
+      "0", ",", "0.001"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Qpeak", ",", "0.005", ",", "\"\<peak charge\>\""}], "}"}], 
+      ",", "0", ",", "0.01"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+      "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"g", ",", "1", ",", "\"\<y-axis\>\""}], "}"}], ",", "0.001", 
+      ",", "2"}], "}"}]}], " ", "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7640889181619253`*^9, 3.764088926633339*^9}, {
+   3.764088964289628*^9, 3.764088988271035*^9}, {3.7640891704947033`*^9, 
+   3.764089196058092*^9}, {3.764089342079609*^9, 3.764089487829213*^9}, {
+   3.764089528596677*^9, 3.764089550156947*^9}, {3.764089582803727*^9, 
+   3.7640896778231983`*^9}, {3.764090537882227*^9, 3.764090540923541*^9}, {
+   3.764090590149809*^9, 3.764090593399433*^9}, {3.7640906285842743`*^9, 
+   3.764090692574506*^9}, {3.764090794136237*^9, 3.764090806026765*^9}, {
+   3.764090837040701*^9, 3.764090898532859*^9}, {3.764090941596629*^9, 
+   3.7640909437553253`*^9}, {3.764090976505106*^9, 3.764091021506456*^9}, {
+   3.764091150883288*^9, 3.7640912020336857`*^9}, {3.764091336264182*^9, 
+   3.764091379815197*^9}, 3.7640914408380613`*^9, {3.764091774693416*^9, 
+   3.764091776863988*^9}, {3.7641759999799023`*^9, 3.76417600013898*^9}, {
+   3.764176061156089*^9, 3.7641760614929113`*^9}, {3.764176190867989*^9, 
+   3.76417622141434*^9}, {3.764176270971566*^9, 3.764176308288085*^9}, {
+   3.7641763555399723`*^9, 3.764176380620738*^9}, {3.76417677966672*^9, 
+   3.764176956818841*^9}, {3.764176987370225*^9, 3.764177057705208*^9}, 
+   3.764177098806726*^9, {3.764177137294813*^9, 3.7641771537916594`*^9}, {
+   3.764177233521263*^9, 3.764177235989381*^9}, {3.764177316212123*^9, 
+   3.76417739188159*^9}, {3.764177482276935*^9, 3.7641775083307056`*^9}, {
+   3.764177560420906*^9, 3.764177573631199*^9}, {3.76417762919414*^9, 
+   3.764177694730751*^9}, {3.764177749135015*^9, 3.764177762882408*^9}, {
+   3.7641778003738947`*^9, 3.7641778485982103`*^9}, {3.764177901750073*^9, 
+   3.7641779368240643`*^9}, {3.7641779785421457`*^9, 
+   3.7641780009487343`*^9}, {3.764178049757229*^9, 3.764178050582123*^9}, {
+   3.764179040043314*^9, 3.76417904259268*^9}, {3.764179120063341*^9, 
+   3.7641791586541224`*^9}, {3.7641792056738157`*^9, 3.764179218255333*^9}, {
+   3.764179254518825*^9, 3.764179255358576*^9}, {3.76417932351965*^9, 
+   3.764179366718507*^9}, {3.764179492698207*^9, 3.764179501605939*^9}, {
+   3.764182105249724*^9, 3.7641821098725357`*^9}},
+ CellLabel->
+  "In[154]:=",ExpressionUUID->"94d1427f-91c2-4a03-bbeb-845970a68b7b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{C$$ = 0.0004, $CellContext`g$$ = 1, $CellContext`L$$ = 
+    0.03, $CellContext`Qpeak$$ = 0.005, $CellContext`R$$ = 
+    5, $CellContext`xf$$ = 0.1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`R$$], 5, "resistance"}, 0.01, 10}, {{
+       Hold[$CellContext`L$$], 0.03, "inductance"}, 0.0001, 0.1}, {{
+       Hold[C$$], 0.0004, "capacitance"}, 0, 0.001}, {{
+       Hold[$CellContext`Qpeak$$], 0.005, "peak charge"}, 0, 0.01}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}, {{
+       Hold[$CellContext`g$$], 1, "y-axis"}, 0.001, 2}}, Typeset`size$$ = {
+    449., {110., 114.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`R$141212$$ = 
+    0, $CellContext`L$141213$$ = 0, C$141214$$ = 
+    0, $CellContext`Qpeak$141215$$ = 0, $CellContext`xf$141216$$ = 
+    0, $CellContext`g$141217$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       C$$ = 0.0004, $CellContext`g$$ = 1, $CellContext`L$$ = 
+        0.03, $CellContext`Qpeak$$ = 0.005, $CellContext`R$$ = 
+        5, $CellContext`xf$$ = 0.1}, "ControllerVariables" :> {
+        Hold[$CellContext`R$$, $CellContext`R$141212$$, 0], 
+        Hold[$CellContext`L$$, $CellContext`L$141213$$, 0], 
+        Hold[C$$, C$141214$$, 0], 
+        Hold[$CellContext`Qpeak$$, $CellContext`Qpeak$141215$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$141216$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$141217$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`Qrlc$ = 
+         NDSolve[{$CellContext`L$$ 
+              Derivative[
+               2][$CellContext`y][$CellContext`x] + $CellContext`R$$ 
+              Derivative[
+               1][$CellContext`y][$CellContext`x] + \
+$CellContext`y[$CellContext`x]/C$$ == 
+            0, $CellContext`y[0] == $CellContext`Qpeak$$, 
+            Derivative[1][$CellContext`y][0] == 
+            0}, $CellContext`y, {$CellContext`x, 0, $CellContext`xf$$}]}, 
+        Plot[
+         Evaluate[
+          ReplaceAll[{
+            $CellContext`y[$CellContext`x], 
+            Derivative[
+            1][$CellContext`y][$CellContext`x]}, $CellContext`Qrlc$]], \
+{$CellContext`x, 0, $CellContext`xf$$}, 
+         PlotRange -> {-$CellContext`g$$, $CellContext`g$$}, PlotLegends -> 
+         LineLegend[{"Charge", "Current"}]]], 
+      "Specifications" :> {{{$CellContext`R$$, 5, "resistance"}, 0.01, 
+         10}, {{$CellContext`L$$, 0.03, "inductance"}, 0.0001, 0.1}, {{
+         C$$, 0.0004, "capacitance"}, 0, 
+         0.001}, {{$CellContext`Qpeak$$, 0.005, "peak charge"}, 0, 
+         0.01}, {{$CellContext`xf$$, 0.1, "time"}, 0, 
+         1}, {{$CellContext`g$$, 1, "y-axis"}, 0.001, 2}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{494., {225., 231.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7641763109276857`*^9, 3.7641763934682007`*^9, 3.764177101151952*^9, {
+   3.764177145607967*^9, 3.764177155917811*^9}, 3.764177237280383*^9, 
+   3.764177331037807*^9, 3.7641773926455193`*^9, {3.764177501309864*^9, 
+   3.764177509825005*^9}, 3.764177576646882*^9, 3.764177634345314*^9, {
+   3.7641776807218313`*^9, 3.764177696909975*^9}, {3.764177754067231*^9, 
+   3.764177764513117*^9}, 3.764177808451407*^9, 3.7641778524931183`*^9, {
+   3.7641779207412024`*^9, 3.764177937875111*^9}, 3.764178002991434*^9, 
+   3.764178052347412*^9, 3.764179071371974*^9, {3.764179121657318*^9, 
+   3.764179159435089*^9}, {3.764179207695839*^9, 3.764179220888834*^9}, 
+   3.764179258612895*^9, 3.7641793247848043`*^9, 3.7641795036210003`*^9, 
+   3.764182111030121*^9},
+ CellLabel->
+  "Out[154]=",ExpressionUUID->"787c9ef3-236c-4a9d-bf1d-f8ca592f8883"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Driven RLC Circuits", "Subsubsection",
+ CellChangeTimes->{{3.764180922800969*^9, 
+  3.764180932132756*^9}},ExpressionUUID->"65488bf9-3b17-4c25-b2e8-\
+46d52a45b61e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"L", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["d", "2"], "Q"}], 
+       SuperscriptBox["dt", "2"]]}], "+", 
+     RowBox[{"R", 
+      FractionBox["dQ", "dt"]}], "+", 
+     FractionBox["Q", "C"]}], "DisplayFormula"], 
+   StyleBox["=", "DisplayFormula"], 
+   RowBox[{
+    SubscriptBox[
+     StyleBox["V", "DisplayFormula"], "app_peak"], "cos", 
+    RowBox[{"(", "\[Omega]t", ")"}]}]}]], "DisplayFormula",
+  CellChangeTimes->{{3.764179388253248*^9, 3.764179407588779*^9}, {
+   3.7641794496956797`*^9, 3.764179470505158*^9}, {3.764179512392495*^9, 
+   3.764179636202816*^9}},ExpressionUUID->
+  "d2cd1371-0410-4648-99c8-928b4fdaeb10"],
+ "\nResonant frequency: ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[Omega]", "DisplayFormula"], "0"], 
+   StyleBox["=", "DisplayFormula"], 
+   StyleBox[
+    FractionBox["1", 
+     SqrtBox["LC"]], "DisplayFormula"]}]],
+  CellChangeTimes->{{3.764179388253248*^9, 3.764179407588779*^9}, {
+   3.7641794496956797`*^9, 3.764179470505158*^9}, {3.764179512392495*^9, 
+   3.764179636202816*^9}},ExpressionUUID->
+  "fb699c13-f153-4be7-91ac-ce0aa521042f"],
+ "\nMaximum power when \[Omega] = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Omega]", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cbc4a329-4c6b-4567-9905-231a9df5be07"]
+}], "Text",
+ CellChangeTimes->{{3.764180958332635*^9, 3.764181081668517*^9}, {
+  3.764181156859867*^9, 3.764181281505406*^9}, {3.764181318191165*^9, 
+  3.76418134497333*^9}},ExpressionUUID->"e492d399-9cf8-4a0b-a537-\
+4b3da41fdada"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Qrlc", "=", 
+       RowBox[{"NDSolve", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"L", "*", 
+              RowBox[{
+               RowBox[{"y", "''"}], "[", "x", "]"}]}], "+", 
+             RowBox[{"R", "*", 
+              RowBox[{
+               RowBox[{"y", "'"}], "[", "x", "]"}]}], "+", 
+             FractionBox[
+              RowBox[{"y", "[", "x", "]"}], "C"], "-", 
+             RowBox[{"Vpeak", "*", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"\[Omega]", "*", "x"}], "]"}]}]}], "\[Equal]", "0"}], 
+           ",", 
+           RowBox[{
+            RowBox[{"y", "[", "0", "]"}], "==", "Qpeak"}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"y", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+         "y", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "xf"}], "}"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"y", "[", "x", "]"}], ",", 
+           RowBox[{
+            RowBox[{"y", "'"}], "[", "x", "]"}]}], "}"}], "/.", "Qrlc"}], 
+        "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "xf"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "g"}], ",", "g"}], "}"}]}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"LineLegend", "[", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Charge\>\"", ",", "\"\<Current\>\""}], "}"}], 
+         "]"}]}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"R", ",", "5", ",", "\"\<resistance\>\""}], "}"}], ",", "0.01", 
+     ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"L", ",", "0.03", ",", "\"\<inductance\>\""}], "}"}], ",", 
+     "0.0001", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"C", ",", "0.0004", ",", "\"\<capacitance\>\""}], "}"}], ",", 
+     "0", ",", "0.001"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Qpeak", ",", "0.005", ",", "\"\<peak charge\>\""}], "}"}], ",",
+      "0", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vpeak", ",", "6", ",", "\"\<peak voltage\>\""}], "}"}], ",", 
+     "0", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Omega]", ",", " ", "20", ",", " ", "\"\<angular frequency\>\""}], 
+      "}"}], ",", "0", ",", "400"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xf", ",", "0.1", ",", "\"\<time\>\""}], "}"}], ",", "0", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "1", ",", "\"\<y-axis\>\""}], "}"}], ",", "0.001", 
+     ",", "2"}], "}"}]}], " ", "]"}]], "Input",
+ CellChangeTimes->{{3.764181350907118*^9, 3.7641814794608*^9}, {
+   3.76418157847911*^9, 3.7641816275364017`*^9}, {3.7641816669256973`*^9, 
+   3.764181696977633*^9}, 3.764181738503532*^9, {3.764182059104149*^9, 
+   3.764182064033916*^9}},
+ CellLabel->
+  "In[153]:=",ExpressionUUID->"0b84c6b3-0fd1-4bdf-aca9-5beeb379d07a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{C$$ = 0.0004, $CellContext`g$$ = 
+    1.8940000000000001`, $CellContext`L$$ = 0.03, $CellContext`Qpeak$$ = 
+    0.005, $CellContext`R$$ = 5, $CellContext`Vpeak$$ = 6, $CellContext`xf$$ =
+     0.378, $CellContext`\[Omega]$$ = 312., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`R$$], 5, "resistance"}, 0.01, 10}, {{
+       Hold[$CellContext`L$$], 0.03, "inductance"}, 0.0001, 0.1}, {{
+       Hold[C$$], 0.0004, "capacitance"}, 0, 0.001}, {{
+       Hold[$CellContext`Qpeak$$], 0.005, "peak charge"}, 0, 0.01}, {{
+       Hold[$CellContext`Vpeak$$], 6, "peak voltage"}, 0, 12}, {{
+       Hold[$CellContext`\[Omega]$$], 20, "angular frequency"}, 0, 400}, {{
+       Hold[$CellContext`xf$$], 0.1, "time"}, 0, 1}, {{
+       Hold[$CellContext`g$$], 1, "y-axis"}, 0.001, 2}}, Typeset`size$$ = {
+    449., {105., 109.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`R$128589$$ = 
+    0, $CellContext`L$128590$$ = 0, C$128591$$ = 
+    0, $CellContext`Qpeak$128592$$ = 0, $CellContext`Vpeak$128593$$ = 
+    0, $CellContext`\[Omega]$128594$$ = 0, $CellContext`xf$128595$$ = 
+    0, $CellContext`g$128596$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       C$$ = 0.0004, $CellContext`g$$ = 1, $CellContext`L$$ = 
+        0.03, $CellContext`Qpeak$$ = 0.005, $CellContext`R$$ = 
+        5, $CellContext`Vpeak$$ = 6, $CellContext`xf$$ = 
+        0.1, $CellContext`\[Omega]$$ = 20}, "ControllerVariables" :> {
+        Hold[$CellContext`R$$, $CellContext`R$128589$$, 0], 
+        Hold[$CellContext`L$$, $CellContext`L$128590$$, 0], 
+        Hold[C$$, C$128591$$, 0], 
+        Hold[$CellContext`Qpeak$$, $CellContext`Qpeak$128592$$, 0], 
+        Hold[$CellContext`Vpeak$$, $CellContext`Vpeak$128593$$, 0], 
+        Hold[$CellContext`\[Omega]$$, $CellContext`\[Omega]$128594$$, 0], 
+        Hold[$CellContext`xf$$, $CellContext`xf$128595$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$128596$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`Qrlc$ = 
+         NDSolve[{$CellContext`L$$ 
+              Derivative[
+               2][$CellContext`y][$CellContext`x] + $CellContext`R$$ 
+              Derivative[
+               1][$CellContext`y][$CellContext`x] + \
+$CellContext`y[$CellContext`x]/C$$ - $CellContext`Vpeak$$ 
+             Cos[$CellContext`\[Omega]$$ $CellContext`x] == 
+            0, $CellContext`y[0] == $CellContext`Qpeak$$, 
+            Derivative[1][$CellContext`y][0] == 
+            0}, $CellContext`y, {$CellContext`x, 0, $CellContext`xf$$}]}, 
+        Plot[
+         Evaluate[
+          ReplaceAll[{
+            $CellContext`y[$CellContext`x], 
+            Derivative[
+            1][$CellContext`y][$CellContext`x]}, $CellContext`Qrlc$]], \
+{$CellContext`x, 0, $CellContext`xf$$}, 
+         PlotRange -> {-$CellContext`g$$, $CellContext`g$$}, PlotLegends -> 
+         LineLegend[{"Charge", "Current"}]]], 
+      "Specifications" :> {{{$CellContext`R$$, 5, "resistance"}, 0.01, 
+         10}, {{$CellContext`L$$, 0.03, "inductance"}, 0.0001, 0.1}, {{
+         C$$, 0.0004, "capacitance"}, 0, 
+         0.001}, {{$CellContext`Qpeak$$, 0.005, "peak charge"}, 0, 
+         0.01}, {{$CellContext`Vpeak$$, 6, "peak voltage"}, 0, 
+         12}, {{$CellContext`\[Omega]$$, 20, "angular frequency"}, 0, 
+         400}, {{$CellContext`xf$$, 0.1, "time"}, 0, 
+         1}, {{$CellContext`g$$, 1, "y-axis"}, 0.001, 2}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{791., {134., 140.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.764181596421372*^9, 3.7641816307536497`*^9, 
+  3.764181697808901*^9, 3.7641817396621523`*^9, 3.764182066488035*^9},
+ CellLabel->
+  "Out[153]=",ExpressionUUID->"0105ab8e-e129-4304-857a-0e5841034651"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1180, 854},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 838, 12, 98, "Title",ExpressionUUID->"f9506561-d8f6-46a9-8bb1-e0bb178d81c1"],
+Cell[1421, 36, 270, 5, 35, "Text",ExpressionUUID->"8c4a3d9e-239f-4c55-a190-719b54bd46fa"],
+Cell[CellGroupData[{
+Cell[1716, 45, 269, 4, 45, "Subsubsection",ExpressionUUID->"ac79fd8f-8fcc-4674-95e3-75d042e9bc0f"],
+Cell[1988, 51, 892, 30, 164, "DisplayFormula",ExpressionUUID->"822f3df7-c9d4-4d77-a973-4fe8c3c21eee"],
+Cell[2883, 83, 1350, 29, 69, "Input",ExpressionUUID->"4340f15e-1d92-494b-bc13-17b2c455f404"],
+Cell[CellGroupData[{
+Cell[4258, 116, 2118, 60, 95, "Input",ExpressionUUID->"b5fbe725-02d0-4853-ae4b-b8eb8ea84458"],
+Cell[6379, 178, 3329, 60, 405, "Output",ExpressionUUID->"b8a406da-94a8-4f5e-b671-44c2d7aa63ef"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9757, 244, 208, 3, 45, "Subsubsection",ExpressionUUID->"bb08b43b-8abf-4e4a-a0d5-094852a5acbf"],
+Cell[9968, 249, 709, 22, 95, "DisplayFormula",ExpressionUUID->"e08a4279-33a8-462c-ac88-717fbe22659a"],
+Cell[10680, 273, 1315, 32, 93, "Input",ExpressionUUID->"59a6516f-65f1-4253-bb29-89d24e9d69a6"],
+Cell[CellGroupData[{
+Cell[12020, 309, 2189, 58, 95, "Input",ExpressionUUID->"e4562902-2152-42b2-b14b-cca0bc64c838"],
+Cell[14212, 369, 3583, 63, 405, "Output",ExpressionUUID->"8484c2d9-4154-4bec-9a2f-f7defa32f82a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17844, 438, 169, 3, 45, "Subsubsection",ExpressionUUID->"07ae95e6-4821-4f8d-a897-683b03863e2e"],
+Cell[18016, 443, 975, 31, 115, "DisplayFormula",ExpressionUUID->"ff003be8-600a-4492-8dbf-24d4d9a46204"],
+Cell[18994, 476, 877, 22, 52, "Input",ExpressionUUID->"302be4fd-a159-4cf8-bdbb-18e7e6aadb2b"],
+Cell[CellGroupData[{
+Cell[19896, 502, 2001, 56, 95, "Input",ExpressionUUID->"784bbf32-2c37-4af1-9479-0b51227bfa5c"],
+Cell[21900, 560, 3239, 60, 405, "Output",ExpressionUUID->"a95c9a66-5a0a-43de-8382-86f0845813c2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25188, 626, 165, 3, 45, "Subsubsection",ExpressionUUID->"bf655b09-06fc-448b-8d07-12303df8fe15"],
+Cell[25356, 631, 517, 15, 86, "Input",ExpressionUUID->"932138ad-0ca5-407a-b235-96aa96398dc9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25910, 651, 161, 3, 45, "Subsubsection",ExpressionUUID->"8a5cd586-9c5f-41d3-8e23-a14fa559da85"],
+Cell[26074, 656, 757, 24, 97, "DisplayFormula",ExpressionUUID->"7b8169ea-6f73-4139-a1ad-2c05c14cf22e"],
+Cell[CellGroupData[{
+Cell[26856, 684, 3084, 85, 161, "Input",ExpressionUUID->"5c6b9b90-74b9-4aa2-9a35-566d8eec3f22"],
+Cell[29943, 771, 3538, 66, 451, "Output",ExpressionUUID->"8e2b266e-b07d-4173-95e9-57fa9cf8dbac"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33530, 843, 163, 3, 45, "Subsubsection",ExpressionUUID->"34771a02-e29f-4554-8866-ba5362cb2643"],
+Cell[33696, 848, 836, 25, 102, "Text",ExpressionUUID->"364d9a1d-172b-4f4b-910c-e537efad89e4"],
+Cell[CellGroupData[{
+Cell[34557, 877, 4922, 111, 146, "Input",ExpressionUUID->"94d1427f-91c2-4a03-bbeb-845970a68b7b"],
+Cell[39482, 990, 4534, 87, 475, "Output",ExpressionUUID->"787c9ef3-236c-4a9d-bf1d-f8ca592f8883"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44065, 1083, 170, 3, 45, "Subsubsection",ExpressionUUID->"65488bf9-3b17-4c25-b2e8-46d52a45b61e"],
+Cell[44238, 1088, 1631, 45, 121, "Text",ExpressionUUID->"e492d399-9cf8-4a0b-a537-4b3da41fdada"],
+Cell[CellGroupData[{
+Cell[45894, 1137, 3455, 100, 145, "Input",ExpressionUUID->"0b84c6b3-0fd1-4bdf-aca9-5beeb379d07a"],
+Cell[49352, 1239, 4619, 87, 293, "Output",ExpressionUUID->"0105ab8e-e129-4304-857a-0e5841034651"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
